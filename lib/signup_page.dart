@@ -15,10 +15,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  static TextEditingController emailController = TextEditingController();
+  static TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    var emailController = TextEditingController();
-    var passwordController = TextEditingController();
     List images = ["g.png", "f.png", "t.png"];
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
@@ -104,9 +104,10 @@ class _SignUpState extends State<SignUp> {
                           ]),
                       child: TextField(
                         controller: passwordController,
+                        keyboardType: TextInputType.number,
                         obscureText: true,
                         decoration: InputDecoration(
-                            hintText: "Password",
+                            hintText: "Passcode",
                             prefixIcon: Icon(
                               Icons.security,
                               color: Colors.deepOrangeAccent,

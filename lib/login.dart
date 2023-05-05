@@ -15,9 +15,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  static TextEditingController emailController = TextEditingController();
+  static TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    var emailController = TextEditingController();
     var passwordController = TextEditingController();
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
@@ -104,8 +105,9 @@ class _LoginPageState extends State<LoginPage> {
                       child: TextField(
                         controller: passwordController,
                         obscureText: true,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                            hintText: "Password",
+                            hintText: "Passcode",
                             prefixIcon: Icon(
                               Icons.security,
                               color: Colors.deepOrangeAccent,
